@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thượng tướng Đặng Vũ Hiệp — Di Sản Người Lính Tây Nguyên</title>
+  <meta name="description" content="Trang di sản kỹ thuật số tôn vinh cuộc đời, sự nghiệp binh nghiệp và di sản cách mạng của Thượng tướng Đặng Vũ Hiệp (1928-2008).">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+  
+  <!-- CDNs for Three.js & GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader" style="position:fixed; inset:0; z-index:99999; background:#080C14; display:flex; flex-direction:column; align-items:center; justify-content:center; transition: opacity 0.5s ease;">
+    <div style="width:50px; height:50px; border:3px solid rgba(201,168,76,0.1); border-top-color:#C9A84C; border-radius:50%; animation:spin 1s linear infinite; margin-bottom:20px;"></div>
+    <div style="font-family:'Playfair Display', serif; color:#E8DCC8; font-size:1.2rem; letter-spacing:0.1em;">ĐANG TẢI DI SẢN...</div>
+    <style>@keyframes spin { to { transform: rotate(360deg); } }</style>
+  </div>
+
+  <!-- NAVIGATION -->
+  <nav id="navbar">
+    <a href="#" class="nav-brand">
+      <div class="nav-brand-icon">ĐVH</div>
+      <div class="nav-brand-text">
+        ĐẶNG VŨ HIỆP
+        <span>Thượng tướng • Anh hùng LLVTND</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#hero" class="active">Trang Chủ</a></li>
+      <li><a href="#biography">Cuộc Đời Binh Nghiệp</a></li>
+      <li><a href="#legacy">Di Sản Bảo Tàng</a></li>
+      <li><a href="#battles">Sa Bàn Trận Đánh</a></li>
+      <li><a href="#gallery">Thư Viện Ảnh</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-bg-image"></div>
+    
+    <div class="hero-content">
+      <div class="hero-eyebrow">DI SẢN LỊCH SỬ SỐ HÓA</div>
+      <div class="hero-rank">Thượng tướng Quân đội nhân dân Việt Nam</div>
+      <h1 class="hero-name">Đặng Vũ Hiệp</h1>
+      <div class="hero-dates">1928 — 2008</div>
+      
+      <div class="hero-quote">
+        <p>“Trước hết phải nói tới cái nhìn đúng đắn, xa rộng của Đảng ta khi đánh giá địa bàn chiến lược Tây Nguyên... tạo ra thế chiến lược để bắt đầu cuộc Tổng tiến công mùa Xuân 1975.”</p>
+        <cite>Trích hồi ký "Ký ức Tây Nguyên"</cite>
+      </div>
+      
+      <div class="hero-cta">
+        <a href="#biography" class="btn-primary">
+          <i class="fa-solid fa-timeline"></i> Khám phá cuộc đời
+        </a>
+        <a href="#battles" class="btn-outline">
+          <i class="fa-solid fa-map-location-dot"></i> Xem Sa bàn 3D
+        </a>
+      </div>
+    </div>
+    
+    <!-- Hero Scroll Hint -->
+    <div class="hero-scroll-hint">
+      <span>Cuộn để bắt đầu hành trình</span>
+      <div class="scroll-line"></div>
+    </div>
+
+    <!-- Hero Stats -->
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-number">10+</div>
+        <div class="hero-stat-label">Năm ở Tây Nguyên</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">1994</div>
+        <div class="hero-stat-label">Đề xuất Bà mẹ VN Anh hùng</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-number">2023</div>
+        <div class="hero-stat-label">Truy tặng Anh hùng LLVTND</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- BIOGRAPHY / TIMELINE -->
+  <section id="biography">
+    <div class="container">
+      <div class="biography-intro reveal">
+        <div class="biography-text">
+          <div class="section-label">Cuộc Đời Binh Nghiệp</div>
+          <h2 class="section-title">Hành Trình Qua Khói Lửa</h2>
+          <p>
+            Thượng tướng Đặng Vũ Hiệp (1928–2008) là một nhà hoạt động quân sự xuất sắc, người chiến sĩ cách mạng kiên trung đi qua hai cuộc kháng chiến vĩ đại của dân tộc. Hơn mười năm ròng rã gắn bó với chiến trường Tây Nguyên ác liệt trong vai trò Chính ủy Mặt trận Tây Nguyên (Cánh Nam B3), ông đã cùng các tướng lĩnh chỉ huy nhiều chiến dịch lịch sử.
+          </p>
+          <p>
+            Không chỉ là một vị chỉ huy dũng cảm nơi trận mạc, ông còn là người trân trọng từng giọt máu của người lính trận, đồng cam cộng khổ với chiến sĩ và dành trọn cả cuộc đời hòa bình để chăm lo cho chính sách hậu phương quân đội cũng như nạn nhân chất độc da cam.
+          </p>
+        </div>
+        <div class="biography-portrait">
+          <div class="portrait-frame">
+            <img src="assets/images/Anhcuocdoibinhnghiep.png" alt="Chân dung Thượng tướng Đặng Vũ Hiệp" onerror="this.src='assets/images/1966.png'">
+            <div class="portrait-badge">
+              Thượng tướng Đặng Vũ Hiệp<br>
+              (1928 - 2008)
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Timeline wrapper -->
+      <div class="timeline" id="timeline-container">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- LEGACY / DIGITAL MUSEUM -->
+  <section id="legacy">
+    <div class="container">
+      <div class="museum-intro reveal">
+        <div>
+          <div class="section-label">Bảo tàng Số hóa</div>
+          <h2 class="section-title">Di Sản & Kỷ Vật</h2>
+          <p class="section-subtitle">
+            Không gian số hóa lưu trữ những huân chương cao quý, hình ảnh chân dung qua các thời kỳ và các bản tài liệu quét chiến trường nguyên bản.
+          </p>
+        </div>
+        
+        <!-- Room Tabs -->
+        <div class="room-tabs" id="room-tabs">
+          <button class="room-tab active" data-room="all">Tất cả phòng</button>
+          <button class="room-tab" data-room="1">Phòng 1: Chân dung & Huân chương</button>
+          <button class="room-tab" data-room="2">Phòng 2: Khoảnh khắc Lịch sử</button>
+          <button class="room-tab" data-room="3">Phòng 3: Tài liệu số hóa</button>
+        </div>
+      </div>
+
+      <!-- Museum Grid -->
+      <div class="museum-grid" id="museum-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <!-- Legacy Stories Section -->
+      <div class="legacy-stories reveal">
+        <!-- Story 1: Bố không phải là cái ô -->
+        <div class="story-card">
+          <div class="story-icon"><i class="fa-solid fa-umbrella text-gold"></i></div>
+          <h3 class="story-title">“Bố không phải là cái ô...”</h3>
+          <p class="story-text">
+            Lời dạy bảo của Thượng tướng luôn khắc sâu trong lòng các con: tự lập và phấn đấu bằng chính đôi chân của mình. Mặc dù ông biền biệt xa gia đình, hiếm hoi lắm mới tranh thủ về thăm nhà và “lần nào cũng vội”, nhưng những lá thư chiến trường gửi về của ông luôn vương mùi khói súng và đạn bom, chứa đầy lời răn dạy thấm thía.
+          </p>
+          <div class="story-quote">
+            “Bố mẹ chỉ nuôi con ăn học, vào đời tự con phấn đấu. Bố không phải là cái ô để che, không phải là cái thang để con bước...”
+          </div>
+        </div>
+
+        <!-- Story 2: Danh hiệu Bà mẹ Việt Nam Anh hùng -->
+        <div class="story-card">
+          <div class="story-icon"><i class="fa-solid fa-person-breastfeeding text-gold"></i></div>
+          <h3 class="story-title">Danh hiệu “Bà mẹ Việt Nam Anh hùng”</h3>
+          <p class="story-text">
+            Năm 1977, Tướng Đặng Vũ Hiệp trở về sau chiến thắng nhưng lòng bà nội héo hon vì người con út là liệt sĩ Đặng Vũ Tân chưa tìm thấy hài cốt. Câu nói trách móc nhói lòng của mẹ: <em>“Anh làm tướng mà không tìm được mộ em về cho mẹ...”</em> đã thôi thúc ông cùng Tổng cục Chính trị đề xuất xây dựng Đề án chính sách đặc biệt này.
+          </p>
+          <div class="story-quote">
+            Chính từ câu trách cứ của mẹ, Đề án “Bà mẹ Việt Nam Anh hùng” đã ra đời năm 1994, vinh danh hàng vạn người mẹ vĩ đại hiến dâng con mình cho Tổ quốc.
+          </div>
+        </div>
+
+        <!-- Story 3: Phương châm Bám thắt lưng địch -->
+        <div class="story-card">
+          <div class="story-icon"><i class="fa-solid fa-shield-halved text-gold"></i></div>
+          <h3 class="story-title">Chiến thuật “Bám thắt lưng địch mà đánh”</h3>
+          <p class="story-text">
+            Trước đối thủ mới cực kỳ hiện đại là Sư đoàn Kỵ binh bay số 1 Mỹ ở thung lũng Ia Đrăng năm 1965, Tướng Đặng Vũ Hiệp cùng Bí thư Chu Huy Mân đã thảo luận sâu sắc cách khắc chế phi pháo Mỹ. Từ câu nói của một tiểu đội trưởng ở chiến dịch trước đó, phương châm “bám thắt lưng địch” đã trở thành chiến thuật tối ưu, đánh giáp lá cà vô hiệu hóa hỏa lực hạng nặng.
+          </p>
+                    <div class="story-quote">
+            “Nắm thắt lưng địch mà đánh!” — Khẩu lệnh nổi tiếng của người tiểu đội trưởng ở trận Vinh Huy, được Thượng tướng Nguyễn Chí Thanh đúc kết thành phương châm tác chiến “Bám thắt lưng địch mà đánh” cho toàn miền.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BATTLES & IFRAME SA BÀN -->
+  <section id="battles">
+    <div class="container">
+      <div class="battles-header reveal">
+        <div class="section-label">Sa Bàn Trận Địa</div>
+        <h2 class="section-title">Chiến Trường Tây Nguyên &amp; Trận Ia Đrăng 1965</h2>
+        <p class="section-subtitle">
+          Sa bàn 3D mô phỏng chiến dịch Plei Me – Ia Đrăng năm 1965. Trực quan hóa địa hình thung lũng Ia Đrăng dưới chân núi Chư Pông, các điểm đáp trực thăng LZ X-Ray, LZ Albany và các mũi tiến công giữa Quân giải phóng và Sư đoàn Kỵ binh bay số 1 Mỹ.
+        </p>
+      </div>
+
+      <!-- iframe Sa Bàn -->
+      <div class="saban-iframe-wrap reveal">
+        <iframe
+          id="saban-iframe"
+          src="https://saban-media21.vercel.app/"
+          title="Sa Bàn 3D Trận Ia Đrăng 1965"
+          allowfullscreen
+          allow="fullscreen; autoplay"
+          loading="lazy"
+        ></iframe>
+        <a
+          href="https://saban-media21.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="saban-fullscreen-link"
+        >
+          <i class="fa-solid fa-up-right-and-down-left-from-center"></i>
+          Mở toàn màn hình
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <div class="container">
+      <div class="gallery-header reveal">
+        <div class="section-label">Thư Viện Ảnh</div>
+        <h2 class="section-title">Kho Lưu Trữ Hình Ảnh</h2>
+        <p class="section-subtitle">
+          Tập hợp các bức ảnh lịch sử chân thực về cuộc đời Thượng tướng Đặng Vũ Hiệp qua các giai đoạn, từ thời kháng chiến chống Pháp, chống Mỹ, đến công tác hòa bình và các ảnh phục dựng AI đặc biệt.
+        </p>
+      </div>
+
+      <!-- Filters -->
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Tất cả ảnh</button>
+        <button class="filter-btn" data-filter="1945">Thập niên 1945 - 1954</button>
+        <button class="filter-btn" data-filter="1960">Thập niên 1960 - 1974</button>
+        <button class="filter-btn" data-filter="1975">Năm thắng lợi 1975</button>
+        <button class="filter-btn" data-filter="post-1975">Sau năm 1975</button>
+        <button class="filter-btn" data-filter="ai">Phục dựng AI</button>
+      </div>
+
+      <!-- Masonry Grid -->
+      <div class="gallery-masonry" id="gallery-masonry">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- LIGHTBOX OVERLAY -->
+  <div id="lightbox">
+    <button class="lightbox-close"><i class="fa-solid fa-xmark"></i></button>
+    <button class="lightbox-nav lightbox-prev"><i class="fa-solid fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next"><i class="fa-solid fa-chevron-right"></i></button>
+    <div class="lightbox-inner">
+      <img src="" alt="Hình phóng to" class="lightbox-img" id="lightbox-img">
+      <div class="lightbox-caption">
+        <h3 id="lightbox-title">Tiêu đề ảnh</h3>
+        <p id="lightbox-desc">Mô tả chi tiết về bức ảnh này.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-gold-line"></div>
+          <h3>Thượng tướng Đặng Vũ Hiệp</h3>
+          <p>
+            Nguyên Thứ trưởng Bộ Quốc phòng, nguyên Phó Chủ nhiệm Tổng cục Chính trị Quân đội nhân dân Việt Nam. Anh hùng Lực lượng vũ trang nhân dân (truy tặng năm 2023).
+          </p>
+          <p>Trang di sản kỹ thuật số vinh danh người lính Mặt trận Tây Nguyên kiên trung, anh dũng.</p>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Chương mục chính</h4>
+          <ul>
+            <li><a href="#hero">Trang chủ</a></li>
+            <li><a href="#biography">Cuộc đời binh nghiệp</a></li>
+            <li><a href="#legacy">Di sản & Kỷ vật</a></li>
+            <li><a href="#battles">Sa bàn trận đánh 3D</a></li>
+            <li><a href="#gallery">Thư viện hình ảnh</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Nguồn tư liệu sử dụng</h4>
+          <ul>
+            <li>Ký ức Tây Nguyên — Hồi ký Đặng Vũ Hiệp (NXB QĐND, 2002)</li>
+            <li>Lịch sử Chiến dịch Plei Me – Ia Đrăng 1965</li>
+            <li>Tư liệu & Hình ảnh gia đình Thượng tướng cung cấp</li>
+            <li>Báo Quân đội Nhân dân & Báo Tuổi trẻ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Trang Di Sản Kỹ Thuật Số Thượng Tướng Đặng Vũ Hiệp. Thiết kế và số hóa bởi Antigravity.</p>
+        <p>Phiên bản tiếng Việt phục vụ bảo tàng số.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/data/content.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
