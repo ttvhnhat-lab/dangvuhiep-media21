@@ -473,25 +473,6 @@ section {
 /* ─── BIOGRAPHY / TIMELINE ───────────────────────── */
 #biography {
   background: var(--bg-dark);
-  position: relative;
-  overflow: hidden;
-}
-
-#biography::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/images/ban do.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0.18;
-  pointer-events: none;
-  z-index: 0;
-}
-
-#biography > * {
-  position: relative;
-  z-index: 1;
 }
 
 .biography-intro {
@@ -928,6 +909,26 @@ section {
 #battles {
   background: var(--bg-dark);
   padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#battles::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/ban do.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.10;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#battles > * {
+  position: relative;
+  z-index: 1;
 }
 
 .battles-header {
