@@ -1,4 +1,4 @@
-﻿/* ===================================================
+/* ===================================================
    DESIGN SYSTEM — Trang Di Sản Đặng Vũ Hiệp
    =================================================== */
 
@@ -473,6 +473,25 @@ section {
 /* ─── BIOGRAPHY / TIMELINE ───────────────────────── */
 #biography {
   background: var(--bg-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+#biography::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/ban do.png');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#biography > * {
+  position: relative;
+  z-index: 1;
 }
 
 .biography-intro {
@@ -916,6 +935,37 @@ section {
   text-align: center;
 }
 
+.battles-header-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 4px solid var(--gold);
+}
+
+.battles-header-card:hover {
+  border-color: var(--border);
+  box-shadow: var(--shadow-gold);
+}
+
+.battles-header-card .section-title {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.battles-header-card .section-subtitle {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
 .saban-iframe-wrap {
   position: relative;
   width: 100%;
@@ -1315,6 +1365,7 @@ section {
 
 /* ─── RESPONSIVE ──────────────────────────────────── */
 @media (max-width: 1024px) {
+  .hero-bg-image { background-position: center center; }
   .biography-intro { grid-template-columns: 1fr; gap: 48px; }
   .portrait-frame { max-width: 360px; margin: 0 auto; }
   .gallery-masonry { columns: 3; }
